@@ -25,6 +25,17 @@ train.set_index('id', inplace=True)
 test.set_index('id', inplace=True)
 
 hol_evs = pd.read_csv('holidays_events.csv')
+print(hol_evs.shape)
+print(hol_evs.info())
+print(hol_evs.isna().sum())
+hol_evs['date'] = hol_evs['date'].astype('datetime64[ns]')
+hol_evs['type'] = hol_evs['type'].astype('category')
+hol_evs['locale'] = hol_evs['locale'].astype('category')
+hol_evs['locale_name'] = hol_evs['locale_name'].astype('category')
+hol_evs.drop(columns='description', inplace=True)
+hol_evs['transferred'] = hol_evs['transferred'].astype('int')
+
+
 oil = pd.read_csv('oil.csv')
 stores = pd.read_csv('stores.csv')
 sub = pd.read_csv('sub.csv')
