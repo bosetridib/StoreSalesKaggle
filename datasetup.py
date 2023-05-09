@@ -37,7 +37,15 @@ hol_evs['transferred'] = hol_evs['transferred'].astype('int')
 
 
 oil = pd.read_csv('oil.csv')
+print(oil.shape)
+print(oil.info())
+print(oil.isna().sum())
+
 stores = pd.read_csv('stores.csv')
+print(stores.shape)
+print(stores.info())
+print(stores.isna().sum())
+
 sub = pd.read_csv('sub.csv')
 transactions = pd.read_csv('transactions.csv')
 
